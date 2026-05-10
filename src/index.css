@@ -8,11 +8,10 @@
 
 html {
   /* This scales everything down slightly (standard is 16px) */
-  font-size: 14px; 
+  font-size: 16px; 
 }
 
 body {
   font-family: var(--font-sans);
   @apply antialiased; /* Makes fonts look sharper on modern screens */
 }
-
