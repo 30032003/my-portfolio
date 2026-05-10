@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Google Sans", "Open Sans", ui-sans-serif, system-ui;
+  --font-display: "Playfair Display", serif;
+  --font-marathi: "Anek Devanagari", sans-serif;
+}
+
+html {
+  /* This scales everything down slightly (standard is 16px) */
+  font-size: 14px; 
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply antialiased; /* Makes fonts look sharper on modern screens */
+}
+
