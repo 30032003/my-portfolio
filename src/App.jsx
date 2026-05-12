@@ -124,13 +124,13 @@ const EDUCATION = [
   {
     degree: "Post-Graduate Diploma — IT Infrastructure, Systems & Security",
     inst: "CDAC ACTS, Pune",
-    year: "2025 – Present",
+    year: "Feb 2026 – Present",
     note: "Intensive ITISS training covering enterprise Linux, networking protocols, cloud architecture, and cybersecurity fundamentals.",
     accent: "#22d3ee",
     icon: "🏛️",
   },
   {
-    degree: "B.E. Information Technology",
+    degree: "B.Tech. Information Technology",
     inst: "VIIT Pune (Vishwakarma Institute of Information Technology)",
     year: "Batch of 2025",
     note: "Core CS fundamentals, data structures, OS, DBMS, and capstone projects in cloud-integrated applications.",
@@ -1529,20 +1529,20 @@ export default function Portfolio() {
               {[
                 {
                   icon: "📧",
-                  label: "harshal@example.com",
-                  href: "mailto:harshal@example.com",
+                  label: "dahiwaleharshal9@gmail.com",
+                  href: "mailto:dahiwaleharshal9@gmail.com",
                   hc: "hover:border-cyan-600 hover:text-cyan-400",
                 },
                 {
                   icon: "⌥",
                   label: "/github/harshal-dahiwale",
-                  href: "https://github.com/",
+                  href: "https://github.com/30032003",
                   hc: "hover:border-emerald-600 hover:text-emerald-400",
                 },
                 {
                   icon: "🔗",
                   label: "/in/harshal-dahiwale",
-                  href: "https://linkedin.com/in/",
+                  href: "https://www.linkedin.com/in/harshal-dahiwale-02610a22a/",
                   hc: "hover:border-blue-500 hover:text-blue-400",
                 },
               ].map((l) => (
