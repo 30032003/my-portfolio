@@ -45,8 +45,8 @@ The site is designed as a **living document** of my technical skills, projects, 
 
 ### 📬 Contact
 - **Email**: harshal@example.com  
-- **LinkedIn**: [linkedin.com/in/harshal](https://linkedin.com/in/harshal)  
-- **GitHub**: [github.com/harshal](https://github.com/harshal)  
+- **LinkedIn**: [linkedin.com/in/harshal]([https://linkedin.com/in/harshal](https://www.linkedin.com/in/harshal-dahiwale-02610a22a/))  
+- **GitHub**: [github.com/harshal](https://github.com/30032003)  
 
 💡 Recruiter shortcut: Use the **Hire Me** button on the site for quick outreach.
 
