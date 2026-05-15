@@ -39,9 +39,6 @@ The site is designed as a **living document** of my technical skills, projects, 
 - Integrated with **react‑github‑calendar** to show daily streaks.  
 - Active repositories: `Daily-Learning-Repo`, `DevOps-Practice`, `Cloud-Labs`.
 
-### 📖 Today I Learned (TIL)
-- Short notes on **AWS, Kubernetes, Bash scripting**.  
-- Linked to GitHub gists for deeper insights.  
 
 ### 📬 Contact
 - **Email**: dahiwaleharshal9@gmail.com
