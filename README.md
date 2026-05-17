@@ -59,8 +59,8 @@ For quick access, here are my strongest highlights:
 ---
 
 ## 🛠️ Tech Stack
-- **Languages**: Bash, Python, YAML  
-- **Tools**: Docker, Kubernetes, Jenkins, GitHub Actions  
+- **Languages**: Bash, Python, YAML, SQL  
+- **Tools**: Docker, Kubernetes, Jenkins, GitHub Actions, Chef/Puppet, Ansible, Prometheus
 - **Cloud**: AWS, Terraform  
 - **Security**: CIS Benchmark, fail2ban, iptables  
 
