@@ -61,7 +61,7 @@ For quick access, here are my strongest highlights:
 ## 🛠️ Tech Stack
 - **Languages**: Bash, Python, YAML, SQL 
 - **Tools**: Docker, Kubernetes, Jenkins, GitHub Actions, Chef/Puppet, Ansible, Prometheus
-- **Cloud**: AWS, Terraform  
+- **Cloud**: AWS(EC2, VPC, RDS, S3, IAM, Lambda), Terraform  
 - **Subjects**: Computer Networks, Linux, ITIM 
 
 ---
