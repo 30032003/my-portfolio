@@ -1427,11 +1427,10 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ── GITHUB GRAPH ───────────────────────────────────────────────────── */}
       <section id="github" className="max-w-6xl mx-auto px-6 py-24">
         <RevealSection>
           <SectionLabel label="GitHub Activity" />
-          <GitHubGraph username="harshal-dahiwale" />
+          <GitHubGraph username="30032003" />
         </RevealSection>
       </section>
 
