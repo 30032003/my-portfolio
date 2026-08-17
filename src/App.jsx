@@ -845,7 +845,6 @@ function TILCard({ entry }) {
 
       <p
         className={`text-xs text-slate-400 leading-relaxed ${expanded ? "" : "line-clamp-2"}`}
-        style={{ fontFamily: "'Sora', sans-serif" }}
       >
         {entry.body}
       </p>
@@ -995,12 +994,9 @@ export default function Portfolio() {
       : TIL_ENTRIES.filter((t) => t.tag === tilFilter);
 
   return (
-    <div
-      className="min-h-screen bg-[#060d1a] text-slate-200 overflow-x-hidden"
-      style={{ fontFamily: "'Sora', sans-serif" }}
-    >
+    <div className="min-h-screen bg-[#060d1a] text-slate-200 overflow-x-hidden">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Sora:wght@400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap');
         :root { scroll-behavior: smooth; }
         .mono { font-family: 'JetBrains Mono', monospace; }
         .grid-bg {
