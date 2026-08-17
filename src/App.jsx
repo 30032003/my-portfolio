@@ -84,6 +84,7 @@ const PROJECTS = [
     icon: "🛡️",
     status: "Completed",
     hasDiagram: false,
+    github: "https://github.com/30032003/SecureApp-Pipeline",
   },
   {
     title: "TrustVote — Online Voting System",
@@ -93,6 +94,7 @@ const PROJECTS = [
     icon: "🗳️",
     status: "Completed",
     hasDiagram: false,
+    github: "https://github.com/30032003/TrustVote-Online-Voting-Blockchain",
   },
 ];
 
@@ -119,9 +121,11 @@ const CERTS = [
   {
     name: "AWS Academy Graduate — AWS Academy Cloud Foundations",
     issuer: "Amazon Web Services",
-    year: "2025",
+    year: "2024",
     status: "Earned",
-    verifyUrl: "https://aws.amazon.com/training/awsacademy/",
+    // AWS
+    verifyUrl:
+      "https://www.credly.com/badges/38925afe-4391-4c90-a5a7-10be54541cff/public_url",
     accent: "#f97316",
     bg: "from-orange-950/60 to-[#0d1526]",
     abbr: "AWS ACADEMY",
@@ -136,7 +140,7 @@ const CERTS = [
     issuer: "DeepLearning.AI",
     year: "2025",
     status: "Earned",
-    verifyUrl: "https://www.deeplearning.ai/",
+    verifyUrl: "https://simpli-web.app.link/e/3O1sxI1gG5b",
     accent: "#a78bfa",
     bg: "from-purple-950/50 to-[#0d1526]",
     abbr: "GEN AI",
@@ -151,7 +155,8 @@ const CERTS = [
     issuer: "Coursera",
     year: "2025",
     status: "Earned",
-    verifyUrl: "https://www.coursera.org/",
+    // Coursera
+    verifyUrl: "https://coursera.org/share/37c6b091d8c57a40ad3a111a8e14a1a9",
     accent: "#38bdf8",
     bg: "from-sky-950/50 to-[#0d1526]",
     abbr: "SOFTWARE TESTING",
@@ -608,6 +613,7 @@ function ProjectCard({ p }) {
     >
       <div className="flex items-start justify-between">
         <span className="text-2xl">{p.icon}</span>
+
         <span
           style={{
             background: p.status === "Completed" ? "#15803d33" : "#b4530933",
@@ -625,6 +631,7 @@ function ProjectCard({ p }) {
       >
         {p.title}
       </h3>
+
       <p className="text-sm text-slate-400 leading-relaxed flex-1">{p.desc}</p>
 
       <div className="flex flex-wrap gap-1.5 pt-1">
@@ -639,15 +646,35 @@ function ProjectCard({ p }) {
         ))}
       </div>
 
-      {p.hasDiagram && (
-        <button
-          onClick={() => setOpen((o) => !o)}
-          style={{ color: p.accent, borderColor: p.accent + "55" }}
-          className="mt-2 flex items-center gap-2 rounded-lg border px-3 py-1.5 text-xs mono font-semibold hover:bg-white/5 transition-colors self-start"
-        >
-          {open ? "▲ Hide" : "▼ View"} Architecture Diagram
-        </button>
-      )}
+      <div className="flex flex-wrap items-center gap-2 pt-2">
+        {p.github && (
+          <a
+            href={p.github}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              color: p.accent,
+              borderColor: p.accent + "55",
+            }}
+            className="flex items-center gap-2 rounded-lg border px-3 py-1.5 text-xs mono font-semibold hover:bg-white/5 transition-colors"
+          >
+            GitHub ↗
+          </a>
+        )}
+
+        {p.hasDiagram && (
+          <button
+            onClick={() => setOpen((o) => !o)}
+            style={{
+              color: p.accent,
+              borderColor: p.accent + "55",
+            }}
+            className="flex items-center gap-2 rounded-lg border px-3 py-1.5 text-xs mono font-semibold hover:bg-white/5 transition-colors"
+          >
+            {open ? "▲ Hide" : "▼ View"} Architecture
+          </button>
+        )}
+      </div>
 
       {p.hasDiagram && open && (
         <div className="mt-2 animate-in">
