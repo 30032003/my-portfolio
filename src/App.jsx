@@ -942,9 +942,9 @@ function TerminalPrompt() {
     { prompt: "$ whoami", out: "harshal_dahiwale" },
     {
       prompt: "$ cat role.txt",
-      out: "Cloud & DevOps Engineer · CDAC ITISS Trainee",
+      out: "Aspiring DevOps & Cloud Engineer · PG-DITISS",
     },
-    { prompt: "$ uptime", out: "Continuous learner · 24/7 builder" },
+    { prompt: "$ focus", out: "Linux · AWS · Docker · DevSecOps" },
   ];
   const [shown, setShown] = useState(0);
   useEffect(() => {
@@ -978,11 +978,10 @@ function TerminalPrompt() {
 ══════════════════════════════════════════════════════════════════ */
 export default function Portfolio() {
   const taglines = [
-    "Cloud Engineer",
-    "DevOps Practitioner",
-    "Linux Enthusiast",
+    "Aspiring DevOps & Cloud Engineer",
+    "DevSecOps Practitioner",
+    "Linux & AWS Learner",
     "Automation Builder",
-    "AWS Learner",
   ];
   const typed = useTypewriter(taglines);
   const [tilFilter, setTilFilter] = useState("All");
@@ -1051,10 +1050,10 @@ export default function Portfolio() {
               <span className="inline-block w-0.5 h-5 bg-cyan-400 animate-pulse" />
             </div>
             <p className="text-slate-400 leading-relaxed max-w-lg text-sm sm:text-base mb-8 mx-auto lg:mx-0">
-              IT Graduate from VIIT Pune · CDAC ACTS ITISS Trainee.
+              B.Tech IT graduate from VIIT Pune · PG-DITISS, CDAC ACTS.
               <br />
-              Building reliable infrastructure, automated pipelines, and
-              cloud-native systems.
+              Building hands-on skills in Linux, AWS, Docker, CI/CD, and
+              DevSecOps.
             </p>
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
               <a
