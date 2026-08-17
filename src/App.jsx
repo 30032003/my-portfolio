@@ -50,17 +50,19 @@ function useReveal(threshold = 0.1) {
 ══════════════════════════════════════════════════════════════════ */
 const SKILLS = [
   { name: "Linux", icon: "🐧", color: "#facc15" },
+  { name: "Networking", icon: "🌐", color: "#22d3ee" },
   { name: "AWS", icon: "☁️", color: "#f97316" },
   { name: "Docker", icon: "🐳", color: "#38bdf8" },
   { name: "Kubernetes", icon: "⎈", color: "#6366f1" },
-  { name: "Jenkins", icon: "⚙️", color: "#e11d48" },
+  { name: "Git / GitHub", icon: "⌥", color: "#fb923c", mono: true },
   { name: "Python", icon: "🐍", color: "#4ade80" },
-  { name: "Terraform", icon: "🏗️", color: "#a78bfa" },
-  { name: "Networking", icon: "🌐", color: "#22d3ee" },
   { name: "Bash", icon: "$", color: "#4ade80", mono: true },
-  { name: "Git", icon: "⌥", color: "#fb923c", mono: true },
+  { name: "Jenkins", icon: "⚙️", color: "#e11d48" },
+  { name: "Terraform", icon: "🏗️", color: "#a78bfa" },
   { name: "Nginx", icon: "⚡", color: "#34d399" },
   { name: "Prometheus", icon: "🔥", color: "#f59e0b" },
+  { name: "Grafana", icon: "📊", color: "#fb923c" },
+  { name: "DevSecOps", icon: "🛡️", color: "#22d3ee" },
 ];
 
 const PROJECTS = [
@@ -1167,14 +1169,14 @@ export default function Portfolio() {
             <div className="mt-12 grid sm:grid-cols-3 gap-5">
               {[
                 {
-                  title: "Infrastructure & Cloud",
+                  title: "Cloud & Infrastructure",
                   icon: "☁️",
                   color: "#f97316",
                   items: [
                     "AWS EC2 / S3 / VPC / IAM",
-                    "Terraform IaC",
+                    "Linux Administration",
                     "Networking & Subnets",
-                    "Linux Server Admin",
+                    "Terraform Infrastructure as Code",
                   ],
                 },
                 {
@@ -1182,21 +1184,21 @@ export default function Portfolio() {
                   icon: "⚙️",
                   color: "#22d3ee",
                   items: [
-                    "Jenkins CI/CD Pipelines",
-                    "Docker & Compose",
-                    "Kubernetes & Helm",
-                    "Bash & Python Scripts",
+                    "Git & GitHub",
+                    "Docker & Docker Compose",
+                    "Kubernetes",
+                    "Jenkins & CI/CD",
                   ],
                 },
                 {
-                  title: "Monitoring & Security",
-                  icon: "🔒",
+                  title: "Security & Monitoring",
+                  icon: "🛡️",
                   color: "#4ade80",
                   items: [
-                    "Prometheus + Grafana",
-                    "Server Hardening (CIS)",
-                    "fail2ban / UFW",
-                    "Log Analysis",
+                    "DevSecOps Practices",
+                    "Prometheus & Grafana",
+                    "Security Testing",
+                    "Bash & Python Automation",
                   ],
                 },
               ].map((cat) => (
