@@ -796,14 +796,16 @@ function TILCard({ entry }) {
 /* ══════════════════════════════════════════════════════════════════
    NAV
 ══════════════════════════════════════════════════════════════════ */
-function Nav() {
+function Nav({ theme, setTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", h);
     return () => window.removeEventListener("scroll", h);
   }, []);
+
   const links = [
     "About",
     "Skills",
@@ -814,15 +816,27 @@ function Nav() {
     "Education",
     "Contact",
   ];
+
+  const toggleTheme = () => {
+    setTheme((current) => (current === "dark" ? "light" : "dark"));
+  };
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#060d1a]/92 backdrop-blur border-b border-slate-800 py-3" : "py-5"}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#060d1a]/92 backdrop-blur border-b border-slate-800 py-3"
+          : "py-5"
+      }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
         <span className="font-mono text-cyan-400 font-bold text-lg tracking-tight select-none">
           harshal<span className="text-emerald-400">@</span>devops
           <span className="animate-pulse">_</span>
         </span>
+
+        {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-5">
           {links.map((l) => (
             <a
@@ -833,14 +847,30 @@ function Nav() {
               ./{l}
             </a>
           ))}
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            title={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
+            className="ml-1 w-8 h-8 rounded-lg border border-slate-700 bg-[#0d1526] text-slate-300 hover:text-cyan-400 hover:border-cyan-700 transition-all duration-200"
+          >
+            {theme === "dark" ? "☀" : "☾"}
+          </button>
+
+          {/* CV */}
           <a
-            href="/harshal-dahiwale-cv.pdf"
+            href="/Harshal_Dahiwale_CDAC_Resume.pdf"
             download
-            className="ml-2 rounded-lg border border-cyan-500 px-4 py-1.5 font-mono text-xs text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+            className="ml-1 rounded-lg border border-cyan-500 px-4 py-1.5 font-mono text-xs text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
           >
             ↓ CV
           </a>
         </div>
+
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen((o) => !o)}
           className="lg:hidden text-slate-400 hover:text-cyan-400 font-mono text-lg"
@@ -848,6 +878,8 @@ function Nav() {
           {open ? "✕" : "☰"}
         </button>
       </div>
+
+      {/* Mobile Menu */}
       {open && (
         <div className="lg:hidden bg-[#060d1a] border-t border-slate-800 px-6 pb-4 pt-2 flex flex-col gap-3">
           {links.map((l) => (
@@ -860,6 +892,24 @@ function Nav() {
               ./{l}
             </a>
           ))}
+
+          {/* Mobile Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="text-left text-slate-400 hover:text-cyan-400 font-mono text-sm transition-colors duration-200"
+          >
+            {theme === "dark" ? "☀  Light Mode" : "☾  Dark Mode"}
+          </button>
+
+          {/* Mobile CV */}
+          <a
+            href="/Harshal_Dahiwale_CDAC_Resume.pdf"
+            download
+            onClick={() => setOpen(false)}
+            className="text-cyan-400 font-mono text-sm"
+          >
+            ↓ Download CV
+          </a>
         </div>
       )}
     </nav>
@@ -909,6 +959,15 @@ function TerminalPrompt() {
    MAIN APP
 ══════════════════════════════════════════════════════════════════ */
 export default function Portfolio() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("portfolio-theme") || "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
+
   const taglines = [
     "Aspiring DevOps & Cloud Engineer",
     "DevSecOps Practitioner",
@@ -930,6 +989,32 @@ export default function Portfolio() {
     <div className="min-h-screen bg-[#060d1a] text-slate-200 overflow-x-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap');
+        :root {
+  --bg: #060d1a;
+  --surface: #0d1526;
+  --surface-alt: #080f1e;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --border: #1e293b;
+  --grid: rgba(34,211,238,0.04);
+  scroll-behavior: smooth;
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #cbd5e1;
+  --grid: rgba(15,23,42,0.05);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
         :root { scroll-behavior: smooth; }
         .mono { font-family: 'JetBrains Mono', monospace; }
         .grid-bg {
@@ -950,10 +1035,7 @@ export default function Portfolio() {
         .animate-in { animation: fadeSlide 0.4s ease both; }
         @keyframes fadeSlide { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
       `}</style>
-
-      <Nav />
-      <DownloadFAB />
-
+      <Nav theme={theme} setTheme={setTheme} /> <DownloadFAB />
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section
         id="home"
@@ -1009,7 +1091,6 @@ export default function Portfolio() {
           <span>↓</span>
         </div>
       </section>
-
       {/* ── ABOUT ──────────────────────────────────────────────────────────── */}
       {/* ── ABOUT ──────────────────────────────────────────────────────────── */}
       <section id="about" className="max-w-6xl mx-auto px-6 py-24">
@@ -1116,7 +1197,6 @@ export default function Portfolio() {
           </div>
         </RevealSection>
       </section>
-
       {/* ── SKILLS ─────────────────────────────────────────────────────────── */}
       <section
         id="skills"
@@ -1202,7 +1282,6 @@ export default function Portfolio() {
           </RevealSection>
         </div>
       </section>
-
       {/* ── PROJECTS ───────────────────────────────────────────────────────── */}
       <section id="projects" className="max-w-6xl mx-auto px-6 py-24">
         <RevealSection>
@@ -1214,7 +1293,6 @@ export default function Portfolio() {
           </div>
         </RevealSection>
       </section>
-
       {/* ── CERTIFICATIONS ─────────────────────────────────────────────────── */}
       <section
         id="certs"
@@ -1235,14 +1313,12 @@ export default function Portfolio() {
           </RevealSection>
         </div>
       </section>
-
       <section id="github" className="max-w-6xl mx-auto px-6 py-24">
         <RevealSection>
           <SectionLabel label="GitHub Activity" />
           <GitHubGraph username="30032003" />
         </RevealSection>
       </section>
-
       {/* ── TIL ────────────────────────────────────────────────────────────── */}
       <section
         id="til"
@@ -1278,7 +1354,6 @@ export default function Portfolio() {
           </RevealSection>
         </div>
       </section>
-
       {/* ── EDUCATION ──────────────────────────────────────────────────────── */}
       <section id="education" className="max-w-6xl mx-auto px-6 py-24">
         <RevealSection>
@@ -1315,7 +1390,6 @@ export default function Portfolio() {
           </div>
         </RevealSection>
       </section>
-
       {/* ── CONTACT ────────────────────────────────────────────────────────── */}
       <section
         id="contact"
