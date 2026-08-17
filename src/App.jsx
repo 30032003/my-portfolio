@@ -1261,16 +1261,19 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-6 py-24 text-center">
           <RevealSection>
             <SectionLabel label="Contact" />
+
             <div className="max-w-xl mx-auto space-y-4 mb-10 text-slate-400">
               <p className="text-lg">
                 I'm actively seeking Cloud / DevOps / Sysadmin roles.
               </p>
+
               <p className="text-sm">
                 Whether you have an opportunity, a collaboration, or just want
                 to talk infrastructure — reach out.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4 justify-center mb-14">
+
+            <div className="flex flex-wrap gap-4 justify-center">
               {[
                 {
                   icon: "📧",
@@ -1280,7 +1283,7 @@ export default function Portfolio() {
                 },
                 {
                   icon: "⌥",
-                  label: "/github/harshal-dahiwale",
+                  label: "/github/30032003",
                   href: "https://github.com/30032003",
                   hc: "hover:border-emerald-600 hover:text-emerald-400",
                 },
@@ -1298,26 +1301,19 @@ export default function Portfolio() {
                   rel="noreferrer"
                   className={`flex items-center gap-2 rounded-xl border border-slate-700 bg-[#0d1526] px-6 py-3 mono text-sm text-slate-300 ${l.hc} transition-all duration-200`}
                 >
-                  <span>{l.icon}</span> {l.label}
+                  <span>{l.icon}</span>
+                  {l.label}
                 </a>
               ))}
             </div>
-            <div className="inline-block rounded-xl border border-slate-700 bg-[#060d1a] px-6 py-4 mono text-sm text-left max-w-sm w-full">
-              <p className="text-slate-500 mb-1"># reach out</p>
-              <p className="text-cyan-400">
-                $ curl -X POST /api/hire-harshal \
-              </p>
-              <p className="text-slate-400 pl-4">
-                -d '{`{"role":"DevOps","team":"yours"}`}'
-              </p>
-              <p className="text-emerald-400 mt-1">
-                ✓ 200 OK — Let's build something.
-              </p>
+
+            <div className="mt-12 mono text-xs text-slate-600">
+              <span className="text-cyan-700">$</span> Open to DevOps & Cloud
+              opportunities
             </div>
           </RevealSection>
         </div>
       </section>
-
       {/* ── FOOTER ─────────────────────────────────────────────────────────── */}
       <footer className="border-t border-slate-800 py-6 text-center mono text-xs text-slate-600">
         <p>
