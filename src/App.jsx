@@ -103,7 +103,7 @@ const EDUCATION = [
     degree: "Post-Graduate Diploma — IT Infrastructure, Systems & Security",
     inst: "CDAC ACTS, Pune",
     year: "Mar 2026 – Jul 2026",
-    note: "Intensive ITISS training covering enterprise Linux, networking protocols, cloud architecture, and cybersecurity fundamentals.",
+    note: "Intensive IT infrastructure and security training covering Linux, networking, cloud computing, DevOps, and cybersecurity.",
     accent: "#22d3ee",
     icon: "🏛️",
   },
@@ -111,7 +111,7 @@ const EDUCATION = [
     degree: "B.Tech. Information Technology",
     inst: "VIIT Pune (Vishwakarma Institute of Information Technology)",
     year: "Batch of 2025",
-    note: "Core CS fundamentals, data structures, OS, DBMS, and capstone projects in cloud-integrated applications.",
+    note: "Strong foundation in programming, data structures, operating systems, DBMS, networking, and software development.",
     accent: "#4ade80",
     icon: "🎓",
   },
@@ -1214,9 +1214,9 @@ export default function Portfolio() {
       >
         <div className="max-w-6xl mx-auto px-6">
           <RevealSection>
-            <SectionLabel label="Today I Learned" />
+            <SectionLabel label="Technical Notes" />{" "}
             <p className="text-slate-500 text-sm mb-6 mono">
-              # Short technical notes from the lab — one discovery at a time
+              # Short technical notes from my hands-on learning and lab practice
             </p>
             {/* filter tabs */}
             <div className="flex flex-wrap gap-2 mb-8">
@@ -1342,9 +1342,10 @@ export default function Portfolio() {
         </div>
       </section>
       {/* ── FOOTER ─────────────────────────────────────────────────────────── */}
+      {/* ── FOOTER ─────────────────────────────────────────────────────────── */}
       <footer className="border-t border-slate-800 py-6 text-center mono text-xs text-slate-600">
         <p>
-          © 2025 Harshal Dahiwale · <span className="text-cyan-700">React</span>{" "}
+          © 2026 Harshal Dahiwale · <span className="text-cyan-700">React</span>{" "}
           + <span className="text-emerald-700">Tailwind</span> ·{" "}
           <span className="text-slate-500">~/portfolio/v2.0.0</span>
         </p>
