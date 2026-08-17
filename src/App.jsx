@@ -97,7 +97,7 @@ const EDUCATION = [
   {
     degree: "Post-Graduate Diploma — IT Infrastructure, Systems & Security",
     inst: "CDAC ACTS, Pune",
-    year: "Feb 2026 – Present",
+    year: "Mar 2026 – Jul 2026",
     note: "Intensive ITISS training covering enterprise Linux, networking protocols, cloud architecture, and cybersecurity fundamentals.",
     accent: "#22d3ee",
     icon: "🏛️",
