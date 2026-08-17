@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { GitHubCalendar } from "react-github-calendar";
 
 /* ══════════════════════════════════════════════════════════════════
    HOOKS
@@ -464,59 +465,23 @@ function AWSArchDiagram() {
 /* ══════════════════════════════════════════════════════════════════
    GITHUB CONTRIBUTION GRAPH — synthetic heatmap placeholder
 ══════════════════════════════════════════════════════════════════ */
-function GitHubGraph({ username = "harshal-dahiwale" }) {
-  // Generate a realistic-looking 52-week contribution map
-  const weeks = 52;
-  const days = 7;
-  const seed = (w, d) => {
-    // heavier on weekdays, some bursts
-    const base = d < 5 ? 0.45 : 0.15;
-    const burst = w % 8 === 3 || w % 13 === 7 ? 0.6 : 0;
-    return Math.random() < base + burst ? Math.floor(Math.random() * 5) : 0;
-  };
-  const grid = Array.from({ length: weeks }, (_, w) =>
-    Array.from({ length: days }, (_, d) => seed(w, d)),
-  );
-
-  const levelColor = (v) => {
-    if (v === 0) return "#0d1526";
-    if (v === 1) return "#0e4429";
-    if (v === 2) return "#006d32";
-    if (v === 3) return "#26a641";
-    return "#39d353";
-  };
-
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const totalContribs = grid.flat().filter((v) => v > 0).length * 3;
-
+function GitHubGraph({ username }) {
   return (
     <div className="rounded-xl border border-slate-700 bg-[#0d1117] p-5">
-      {/* header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-800 to-emerald-800 flex items-center justify-center text-lg select-none">
             H
           </div>
+
           <div>
             <p className="mono text-sm font-bold text-white">{username}</p>
             <p className="mono text-xs text-slate-500">
-              {totalContribs} contributions in the last year
+              GitHub contribution activity
             </p>
           </div>
         </div>
+
         <a
           href={`https://github.com/${username}`}
           target="_blank"
@@ -527,74 +492,15 @@ function GitHubGraph({ username = "harshal-dahiwale" }) {
         </a>
       </div>
 
-      {/* month labels */}
       <div className="overflow-x-auto">
-        <div style={{ minWidth: 660 }}>
-          <div className="flex ml-8 mb-1 gap-0">
-            {months.map((m, i) => (
-              <span key={m} className="mono text-[9px] text-slate-600 flex-1">
-                {m}
-              </span>
-            ))}
-          </div>
-
-          {/* grid */}
-          <div className="flex gap-[3px]">
-            {/* day labels */}
-            <div className="flex flex-col gap-[3px] mr-1">
-              {["", "M", "", "W", "", "F", ""].map((d, i) => (
-                <span
-                  key={i}
-                  className="mono text-[9px] text-slate-600 h-[11px] w-4 leading-[11px]"
-                >
-                  {d}
-                </span>
-              ))}
-            </div>
-
-            {grid.map((week, wi) => (
-              <div key={wi} className="flex flex-col gap-[3px]">
-                {week.map((val, di) => (
-                  <div
-                    key={di}
-                    title={`${val} contributions`}
-                    style={{
-                      background: levelColor(val),
-                      width: 11,
-                      height: 11,
-                      borderRadius: 2,
-                    }}
-                    className="transition-transform hover:scale-125 cursor-default"
-                  />
-                ))}
-              </div>
-            ))}
-          </div>
-
-          {/* legend */}
-          <div className="flex items-center gap-1.5 mt-3 justify-end">
-            <span className="mono text-[9px] text-slate-600">Less</span>
-            {[0, 1, 2, 3, 4].map((v) => (
-              <div
-                key={v}
-                style={{
-                  background: levelColor(v),
-                  width: 11,
-                  height: 11,
-                  borderRadius: 2,
-                }}
-              />
-            ))}
-            <span className="mono text-[9px] text-slate-600">More</span>
-          </div>
-        </div>
+        <GitHubCalendar
+          username={username}
+          blockSize={11}
+          blockMargin={3}
+          fontSize={11}
+          colorScheme="dark"
+        />
       </div>
-
-      <p className="mono text-[10px] text-slate-600 mt-3 text-center">
-        ⓘ Replace with{" "}
-        <code className="text-cyan-700">react-github-calendar</code> + your
-        Personal Access Token for live data
-      </p>
     </div>
   );
 }
