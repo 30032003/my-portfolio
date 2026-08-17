@@ -525,7 +525,7 @@ function DownloadFAB() {
 
   return (
     <a
-      href="/harshal-dahiwale-cv.pdf"
+      href="/Harshal_Dahiwale_CDAC_Resume.pdf"
       download
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
@@ -992,7 +992,7 @@ export default function Portfolio() {
                 ./view-projects
               </a>
               <a
-                href="/harshal-dahiwale-cv.pdf"
+                href="/Harshal_Dahiwale_CDAC_Resume.pdf"
                 download
                 className="rounded-lg border border-slate-700 px-6 py-2.5 text-sm font-bold text-slate-300 mono hover:border-cyan-600 hover:text-cyan-400 transition-all flex items-center gap-2"
               >
@@ -1011,70 +1011,106 @@ export default function Portfolio() {
       </section>
 
       {/* ── ABOUT ──────────────────────────────────────────────────────────── */}
+      {/* ── ABOUT ──────────────────────────────────────────────────────────── */}
       <section id="about" className="max-w-6xl mx-auto px-6 py-24">
         <RevealSection>
           <SectionLabel label="About Me" />
-          <div className="grid md:grid-cols-5 gap-10 items-start">
-            <div className="md:col-span-2 flex justify-center md:justify-start">
-              <div className="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-cyan-800/60 shadow-2xl shadow-cyan-950/50">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-950 via-[#0d1526] to-emerald-950 flex items-center justify-center text-7xl select-none">
-                  👨‍💻
+
+          <div className="grid md:grid-cols-[320px_1fr] gap-12 items-start">
+            {/* Profile Image */}
+            <div className="flex justify-center md:justify-start">
+              <div className="relative">
+                <div className="w-64 h-72 rounded-2xl border border-cyan-700/60 bg-[#0d1526] overflow-hidden shadow-[0_0_35px_rgba(34,211,238,0.10)]">
+                  <img
+                    src="/profile.jpg"
+                    alt="Harshal Dahiwale"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#060d1a]/80 to-transparent p-3">
-                  <p className="mono text-xs text-cyan-400 text-center">
-                    Harshal · Pune
-                  </p>
+
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full border border-cyan-800 bg-[#060d1a] px-4 py-1.5 mono text-xs text-cyan-400 whitespace-nowrap">
+                  Harshal · Pune
                 </div>
               </div>
             </div>
-            <div className="md:col-span-3 space-y-4 text-slate-400 leading-relaxed">
-              <p>
+
+            {/* About Content */}
+            <div className="space-y-5">
+              <p className="text-base text-slate-300 leading-relaxed">
                 Hi — I'm{" "}
                 <span className="text-cyan-400 font-semibold">
                   Harshal Dahiwale
                 </span>
-                , an IT graduate from{" "}
+                , a B.Tech Information Technology graduate from{" "}
                 <span className="text-emerald-400 font-semibold">
                   VIIT Pune
                 </span>{" "}
-                (Batch of 2025) deepening my expertise through the{" "}
+                (2025).
+              </p>
+
+              <p className="text-base text-slate-400 leading-relaxed">
+                I recently completed the{" "}
                 <span className="text-emerald-400 font-semibold">
-                  CDAC ACTS ITISS programme
+                  PG-DITISS
+                </span>{" "}
+                programme at CDAC ACTS Pune, where I developed hands-on
+                experience in Linux administration, networking, cloud
+                infrastructure, DevOps, and cybersecurity.
+              </p>
+
+              <p className="text-base text-slate-400 leading-relaxed">
+                My current focus is on building reliable infrastructure and
+                automation using{" "}
+                <span className="text-white font-semibold">
+                  Linux, AWS, Docker, GitHub Actions, CI/CD, and DevSecOps
+                </span>
+                . I enjoy learning by building practical projects and
+                understanding how systems work end-to-end.
+              </p>
+
+              <p className="text-base text-slate-400 leading-relaxed">
+                I'm currently looking for opportunities where I can contribute,
+                learn from experienced engineers, and grow as a{" "}
+                <span className="text-cyan-400 font-semibold">
+                  Cloud / DevOps Engineer
                 </span>
                 .
               </p>
-              <p>
-                My passion is taking manual, error-prone processes and replacing
-                them with reliable, observable, automated pipelines. I thrive in
-                the intersection of{" "}
-                <span className="text-white">
-                  Linux administration, cloud infrastructure, and DevOps tooling
-                </span>
-                .
-              </p>
-              <p>
-                Outside labs I'm obsessed with shell scripting, AWS architecture
-                case studies, and occasionally breaking VMs just to fix them.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4">
-                {[
-                  ["Focus", "Cloud & DevOps"],
-                  ["Location", "Pune, India"],
-                  ["Status", "Open to Work"],
-                  ["Training", "CDAC ITISS"],
-                  ["Grad", "VIIT 2025"],
-                  ["Mode", "Always Learning"],
-                ].map(([k, v]) => (
-                  <div
-                    key={k}
-                    className="rounded-lg border border-slate-800 bg-[#0d1526] px-4 py-3"
-                  >
-                    <p className="mono text-xs text-slate-500">{k}</p>
-                    <p className="mono text-sm text-cyan-400 font-semibold mt-0.5">
-                      {v}
-                    </p>
-                  </div>
-                ))}
+
+              {/* Resume Button */}
+              <div className="pt-3">
+                <a
+                  href="/Harshal_Dahiwale_CDAC_Resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-cyan-700 bg-cyan-950/30 px-5 py-2.5 mono text-sm font-semibold text-cyan-400 hover:bg-cyan-900/40 hover:border-cyan-500 transition-all duration-200"
+                >
+                  ↓ View Resume
+                </a>
+              </div>
+
+              {/* Quick Info */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-3">
+                <div className="rounded-lg border border-slate-800 bg-[#0d1526] px-4 py-3">
+                  <p className="mono text-[10px] text-slate-500">Focus</p>
+                  <p className="mono text-sm font-semibold text-cyan-400">
+                    Cloud & DevOps
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-slate-800 bg-[#0d1526] px-4 py-3">
+                  <p className="mono text-[10px] text-slate-500">Training</p>
+                  <p className="mono text-sm font-semibold text-emerald-400">
+                    PG-DITISS · CDAC
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-slate-800 bg-[#0d1526] px-4 py-3">
+                  <p className="mono text-[10px] text-slate-500">Status</p>
+                  <p className="mono text-sm font-semibold text-cyan-400">
+                    Open to Work
+                  </p>
+                </div>
               </div>
             </div>
           </div>
