@@ -114,178 +114,48 @@ const EDUCATION = [
 
 const CERTS = [
   {
-    name: "AWS Certified Cloud Practitioner",
+    name: "AWS Academy Graduate — AWS Academy Cloud Foundations",
     issuer: "Amazon Web Services",
     year: "2025",
-    status: "In Progress",
-    verifyUrl: "https://aws.amazon.com/certification/",
+    status: "Earned",
+    verifyUrl: "https://aws.amazon.com/training/awsacademy/",
     accent: "#f97316",
     bg: "from-orange-950/60 to-[#0d1526]",
-    abbr: "CLF-C02",
+    abbr: "AWS ACADEMY",
     logo: (
-      <svg viewBox="0 0 80 48" className="w-16 h-10" fill="none">
-        <rect width="80" height="48" rx="6" fill="#232F3E" />
-        <path
-          d="M18 30c0 0 6-12 22-12s22 12 22 12"
-          stroke="#FF9900"
-          strokeWidth="3"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <path
-          d="M28 30l12-14 12 14"
-          stroke="#FF9900"
-          strokeWidth="2.5"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx="40" cy="18" r="3" fill="#FF9900" />
-        <text
-          x="40"
-          y="44"
-          textAnchor="middle"
-          fill="#FF9900"
-          fontSize="7"
-          fontFamily="monospace"
-          fontWeight="bold"
-        >
-          AWS
-        </text>
-      </svg>
+      <div className="w-16 h-10 rounded-md bg-[#232F3E] flex items-center justify-center">
+        <span className="text-[#FF9900] font-bold text-xs mono">AWS</span>
+      </div>
     ),
   },
   {
-    name: "Red Hat Certified System Administrator",
-    issuer: "Red Hat",
+    name: "Generative AI for Everyone",
+    issuer: "DeepLearning.AI",
     year: "2025",
-    status: "In Progress",
-    verifyUrl: "https://www.redhat.com/en/services/certification/rhcsa",
-    accent: "#e11d48",
-    bg: "from-red-950/60 to-[#0d1526]",
-    abbr: "RHCSA",
+    status: "Earned",
+    verifyUrl: "https://www.deeplearning.ai/",
+    accent: "#a78bfa",
+    bg: "from-purple-950/50 to-[#0d1526]",
+    abbr: "GEN AI",
     logo: (
-      <svg viewBox="0 0 80 48" className="w-16 h-10" fill="none">
-        <rect width="80" height="48" rx="6" fill="#1a0000" />
-        <path
-          d="M14 34 C14 34 24 14 40 14 C56 14 66 34 66 34 Z"
-          fill="#EE0000"
-        />
-        <path
-          d="M25 34 C25 34 30 24 40 24 C50 24 55 34 55 34 Z"
-          fill="#CC0000"
-        />
-        <circle cx="40" cy="20" r="5" fill="white" opacity="0.9" />
-        <text
-          x="40"
-          y="45"
-          textAnchor="middle"
-          fill="#EE0000"
-          fontSize="7"
-          fontFamily="monospace"
-          fontWeight="bold"
-        >
-          RHCSA
-        </text>
-      </svg>
+      <div className="w-16 h-10 rounded-md bg-[#18122b] flex items-center justify-center">
+        <span className="text-purple-300 font-bold text-xs mono">GenAI</span>
+      </div>
     ),
   },
   {
-    name: "AWS Solutions Architect – Associate",
-    issuer: "Amazon Web Services",
-    year: "Planned",
-    status: "Planned",
-    verifyUrl:
-      "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
-    accent: "#facc15",
-    bg: "from-yellow-950/40 to-[#0d1526]",
-    abbr: "SAA-C03",
+    name: "Foundations of Software Testing and Validation",
+    issuer: "Coursera",
+    year: "2025",
+    status: "Earned",
+    verifyUrl: "https://www.coursera.org/",
+    accent: "#38bdf8",
+    bg: "from-sky-950/50 to-[#0d1526]",
+    abbr: "SOFTWARE TESTING",
     logo: (
-      <svg viewBox="0 0 80 48" className="w-16 h-10" fill="none">
-        <rect width="80" height="48" rx="6" fill="#232F3E" />
-        <polygon
-          points="40,10 55,20 55,36 40,44 25,36 25,20"
-          stroke="#FF9900"
-          strokeWidth="2"
-          fill="none"
-        />
-        <polygon
-          points="40,18 49,23 49,33 40,38 31,33 31,23"
-          fill="#FF9900"
-          opacity="0.7"
-        />
-        <text
-          x="40"
-          y="44"
-          textAnchor="middle"
-          fill="#FF9900"
-          fontSize="6"
-          fontFamily="monospace"
-          fontWeight="bold"
-        >
-          AWS SAA
-        </text>
-      </svg>
-    ),
-  },
-  {
-    name: "Certified Kubernetes Administrator",
-    issuer: "CNCF / Linux Foundation",
-    year: "Planned",
-    status: "Planned",
-    verifyUrl: "https://www.cncf.io/certification/cka/",
-    accent: "#6366f1",
-    bg: "from-indigo-950/50 to-[#0d1526]",
-    abbr: "CKA",
-    logo: (
-      <svg viewBox="0 0 80 48" className="w-16 h-10" fill="none">
-        <rect width="80" height="48" rx="6" fill="#0d1117" />
-        <polygon
-          points="40,8 54,16 54,32 40,40 26,32 26,16"
-          stroke="#326CE5"
-          strokeWidth="2.5"
-          fill="none"
-        />
-        <circle cx="40" cy="24" r="6" fill="#326CE5" opacity="0.9" />
-        <line
-          x1="40"
-          y1="14"
-          x2="40"
-          y2="34"
-          stroke="#326CE5"
-          strokeWidth="1.5"
-          opacity="0.5"
-        />
-        <line
-          x1="31"
-          y1="19"
-          x2="49"
-          y2="29"
-          stroke="#326CE5"
-          strokeWidth="1.5"
-          opacity="0.5"
-        />
-        <line
-          x1="49"
-          y1="19"
-          x2="31"
-          y2="29"
-          stroke="#326CE5"
-          strokeWidth="1.5"
-          opacity="0.5"
-        />
-        <text
-          x="40"
-          y="45"
-          textAnchor="middle"
-          fill="#326CE5"
-          fontSize="7"
-          fontFamily="monospace"
-          fontWeight="bold"
-        >
-          CKA
-        </text>
-      </svg>
+      <div className="w-16 h-10 rounded-md bg-[#0c2535] flex items-center justify-center">
+        <span className="text-sky-300 font-bold text-xs mono">TEST</span>
+      </div>
     ),
   },
 ];
@@ -941,7 +811,7 @@ function CertCard({ cert }) {
         style={{ color: cert.accent }}
         className="mono text-xs flex items-center gap-1 mt-auto"
       >
-        Verify credential ↗
+        View certification ↗
       </div>
     </a>
   );
